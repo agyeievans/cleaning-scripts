@@ -22,7 +22,7 @@ def read_parquet_sample(file_path):
         # Display the first 10 rows with all columns
         print("\nFirst 10 rows of data:")
         print("----------------------")
-        print(df.head(10).to_string())
+        print(df.head(2).to_string())
         
         # Display basic information about the dataset
         print("\nDataset Info:")
@@ -38,5 +38,5 @@ def read_parquet_sample(file_path):
 # Example usage
 if __name__ == "__main__":
     # Replace 'your_file.parquet' with your Parquet file path
-    file_path = 'afr_Latn test.parquet'
+    file_path = 'yor_Latn test.parquet'
     read_parquet_sample(file_path)

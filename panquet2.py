@@ -52,7 +52,7 @@ def parquet_to_csv(input_file, output_file_prefix, rows_per_file=1000000):
         data = pd.read_parquet(input_file)
         
         # Ensure the expected columns exist
-        expected_columns = ['text', 'id', 'dump', 'url', 'date', 'file_path', 'language', 'language_score', 'language_script', 'minhash_cluster_size', 'top_langs']
+        expected_columns = ['text', 'language']
         if not all(col in data.columns for col in expected_columns):
             raise ValueError(f"The Parquet file does not contain the required columns: {expected_columns}")
 
@@ -93,7 +93,7 @@ def parquet_to_csv(input_file, output_file_prefix, rows_per_file=1000000):
         print(f"An unexpected error occurred: {e}")
 
 # Example usage
-input_parquet_file = "afr_Latn test.parquet"
-output_csv_prefix = "afr_Latn test"
+input_parquet_file = "train-00000-of-00001.parquet"
+output_csv_prefix = "train-00000-of-00001"
 parquet_to_csv(input_parquet_file, output_csv_prefix)
 

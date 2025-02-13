@@ -34,22 +34,22 @@ def convert_json_to_csv(input_json_file, output_csv_file):
         csv_writer = csv.writer(csv_file)
         
         # Write the header
-        csv_writer.writerow(['French', 'Mossi'])
+        csv_writer.writerow(['en', 'wo'])
         
         # Handle different possible data structures
         if isinstance(data, dict):
             # If it's a single dictionary
             for key, value in data.items():
-                if isinstance(value, dict) and 'fr' in value and 'mos' in value:
-                    csv_writer.writerow([value['fr'], value['mos']])
+                if isinstance(value, dict) and 'en' in value and 'wo' in value:
+                    csv_writer.writerow([value['en'], value['wo']])
         elif isinstance(data, list):
             # If it's a list of dictionaries
             for item in data:
                 # Additional error handling for different possible structures
                 if isinstance(item, dict):
                     # Try accessing keys with different variations
-                    fr = item.get('fr') or item.get('Fr') or item.get('FR') or ''
-                    en = item.get('mos') or item.get('Mos') or item.get('MOS') or ''
+                    fr = item.get('en') or item.get('en') or item.get('en') or ''
+                    en = item.get('wo') or item.get('wo') or item.get('wo') or ''
                     csv_writer.writerow([fr, en])
                 elif isinstance(item, str):
                     # If item is a string, split it or handle accordingly
@@ -60,7 +60,7 @@ def convert_json_to_csv(input_json_file, output_csv_file):
     print(f"CSV file '{output_csv_file}' has been created successfully.")
 
 # Example usage
-input_file = r'C:\Users\EVANS\Downloads\Compressed\en-tw.tmx\dev.json'  # Replace with your actual JSON file path
-output_file = 'output.csv'  # Replace with desired output file path
+input_file = r'C:\Users\EVANS\Downloads\Compressed\en-tw.tmx\english_wolof.json'  # Replace with your actual JSON file path
+output_file = 'train.csv'  # Replace with desired output file path
 
 convert_json_to_csv(input_file, output_file)

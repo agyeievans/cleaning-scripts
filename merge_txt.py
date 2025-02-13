@@ -1,13 +1,13 @@
 import csv
 
 # Define file paths
-file1_path = 'gamayun_kit5k-v1_fra-lin_FRA.txt'
-file2_path = 'gamayun_kit5k-v1_fra-lin_LIN.txt'
-output_csv_path = 'gamayun_kit5k-v1_fra-lin.csv'
+file1_path = 'english.txt'
+file2_path = 'twi.txt'
+output_csv_path = 'bible english - twi.csv'
 
 # Define column names
-column1_name = 'French'
-column2_name = 'Lingala'
+column1_name = 'English'
+column2_name = 'Twi'
 
 # Read lines from both files
 with open(file1_path, 'r', encoding='utf-8-sig') as file1, open(file2_path, 'r', encoding='utf-8-sig') as file2:

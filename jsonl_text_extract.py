@@ -28,12 +28,12 @@ def extract_texts_from_jsonl(input_jsonl_file, output_csv_file):
                     
                     # Extract summary if it exists
                     if isinstance(item, dict):
-                        if 'summary' in item:
-                            csv_writer.writerow([item['summary']])
+                        if 'contents' in item:
+                            csv_writer.writerow([item['contents']])
                         
-                        # Extract text if it exists
-                        if 'text' in item:
-                            csv_writer.writerow([item['text']])
+                        # # Extract text if it exists
+                        # if 'text' in item:
+                        #     csv_writer.writerow([item['text']])
                     
                 except json.JSONDecodeError:
                     print(f"Warning: Invalid JSON on line {line_number}. Skipping.")
@@ -47,7 +47,7 @@ def extract_texts_from_jsonl(input_jsonl_file, output_csv_file):
         print(f"Error: Permission denied when trying to read {input_jsonl_file} or write {output_csv_file}")
 
 # Example usage
-input_file = r'C:\Users\EVANS\Downloads\Compressed\en-tw.tmx\yoruba_val.jsonl'  # Replace with your .jsonl file path
-output_file = 'yoruba_val.csv'  # Replace with desired output file path
+input_file = r'C:\Users\EVANS\Downloads\Compressed\en-tw.tmx\Arabic Moroccan-corpus.jsonl'  # Replace with your .jsonl file path
+output_file = 'Arabic Moroccan-corpus.csv'  # Replace with desired output file path
 
 extract_texts_from_jsonl(input_file, output_file)

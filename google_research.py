@@ -2,15 +2,15 @@ import csv
 import pandas as pd
 
 # Read the TSV file
-df = pd.read_csv('zul_mono.tsv', sep='\t', encoding='utf-8', header=None)
+df = pd.read_csv('english_nyanja_translation.tsv', sep='\t', encoding='utf-8', header=None)
 
 # Rename the columns
-df.columns = ['Zulu']
+# df.columns = ['Zulu']
 
-# df.columns = ['Column 1', 'Column 2', 'Column 3', 'Column 4', 'Column 5', 'Column 6', 'Column 7', 'Column 8', 'Column 9', 'Column 10', 'Column 11', 'Column 12']
+df.columns = ['Column 1', 'Column 2', 'Column',  'Column', 'Column', 'Column', 'Column', 'Column', 'Column', 'Column', 'col', 'c']
 
 # Write to CSV with utf-8-sig encoding
-df.to_csv('zul_mono.csv', encoding='utf-8-sig', index=False)
+df.to_csv('english_nyanja_translation.csv', encoding='utf-8-sig', index=False)
 
 print("Conversion completed successfully!")
 
