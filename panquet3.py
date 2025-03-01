@@ -12,7 +12,7 @@ def parquet_to_csv(input_parquet_path, output_csv_path):
     df = pd.read_parquet(input_parquet_path)
 
     # Select only bambara and french columns
-    translations_df = df[['text']]
+    translations_df = df[['instruction', 'input', 'output']]
 
     # Export to CSV with UTF-8-SIG encoding
     translations_df.to_csv(output_csv_path, index=False, encoding='utf-8-sig')
@@ -21,5 +21,5 @@ def parquet_to_csv(input_parquet_path, output_csv_path):
     print(f"Number of rows exported: {len(translations_df)}")
 
 # Example usage:
-parquet_to_csv('yor_Latn train.parquet', 'yor_Latn train.csv')
+parquet_to_csv('train-00000-of-00001.parquet', 'train-00000-of-00001.csv')
 

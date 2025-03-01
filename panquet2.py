@@ -52,7 +52,7 @@ def parquet_to_csv(input_file, output_file_prefix, rows_per_file=1000000):
         data = pd.read_parquet(input_file)
         
         # Ensure the expected columns exist
-        expected_columns = ['text', 'language']
+        expected_columns = ['Context', 'Diacritized','Undiacritized']
         if not all(col in data.columns for col in expected_columns):
             raise ValueError(f"The Parquet file does not contain the required columns: {expected_columns}")
 
